@@ -1,0 +1,20 @@
+/*
+1 product front page
+
+*/
+
+:root{
+    --product_card_width: 10%;
+    --product_card_height: 300px;
+}
+
+/* --- 1 --- */
+ .product_card{
+     background-color: antiquewhite;
+    height: --product_card_height;
+    width: var(--product_card_width); 
+ }
+ .product_card img{
+     background-color: aquamarine;
+     height: calc(var(--product_card_height)/2);
+    }
