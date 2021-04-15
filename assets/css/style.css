@@ -7,13 +7,18 @@
     --product_card_width: 10%;
     --product_card_height: 300px;
 }
+*{
+    margin: 0px;
+}
 
 /* --- 1 --- */
  .product_card{
     display: inline-block;
-    background-color: antiquewhite;
+    background-color: hsl(196, 66%, 39%);
     height: var(--product_card_height);
     width: var(--product_card_width); 
+    border: black 1px;
+    border-style: dashed;
  }
  .product_card img{
      background-color: aquamarine;
@@ -23,4 +28,5 @@
         height: 30px;
         width: auto;
         float: right;
+        margin-bottom: ;
     }

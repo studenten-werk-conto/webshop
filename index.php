@@ -1,8 +1,12 @@
 <?php
-include('core/header.php');
+// include('core/header.php');
 ?>
-<link rel="stylesheet" href="./assets/css/style.css">
+ <link rel="prefetch stylesheet" href="./assets/css/style.css">
+ <!-- q and a time with conto
+q: why make a giant css file for the styling of the website? 
+a: well there is a prefetch so it will be loaded once and then stored in chache this will save bandwith server and client side --> 
 
+<main>
 <div class="product_card">
     <img src="https://i.redd.it/yw18vowkfur61.jpg" alt="product photo">
     <div class="product_card_">
@@ -12,29 +16,7 @@ include('core/header.php');
         <b>gewicht</b>
         <br>
         <b>prijs</b>
-    </div>
-</div>
-<div class="product_card">
-    <img src="https://i.redd.it/yw18vowkfur61.jpg" alt="product photo">
-    <div class="product_card_">
-        <b>naam</b>
-        <br>
-        <b>kleur</b>
-        <b>gewicht</b>
-        <br>
-        <b>prijs</b>
-    </div>
-</div>
-<div class="product_card">
-    <img src="https://i.redd.it/yw18vowkfur61.jpg" alt="product photo">
-    <div class="product_card_">
-        <b>naam</b>
-        <br>
-        <b>kleur</b>
-        <b>gewicht</b>
-        <br>
-        <b>prijs</b>
-        <a><svg class="product_card_order_button">
+        <a href="#"><svg viewBox="0 10 100 100" class="product_card_order_button">
                 <path d="M42.8,17.6H30c-1.7,0-3-1.3-3-3s1.3-3,3-3h12.8c1.7,0,3,1.3,3,3S44.5,17.6,42.8,17.6z"></path>
                 <circle cx="23.7" cy="36.1" r="4"></circle>
                 <circle cx="49.1" cy="36.1" r="4"></circle>
@@ -42,6 +24,7 @@ include('core/header.php');
             </svg></a>
     </div>
 </div>
+</main>
 <?php
-include('core/footer.php');
+// include('core/footer.php');
 ?>
