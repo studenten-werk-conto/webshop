@@ -40,16 +40,3 @@ Link notion: https://www.notion.so/Code-afspraken-cb7f9788b9ae46dfa782545ec3aec5
 000000f0:  69  76  3e                                                      iv>
 
 
-<link rel="stylesheet" href="./assets/css/style.css">
-
-<div class="product_card">
-    <img src="https://i.redd.it/yw18vowkfur61.jpg" alt="product photo">
-    <div class="product_card_">
-        <b>naam</b>
-        <br>
-        <b>kleur</b>
-        <b>gewicht</b>
-<br>
-        <b>prijs</b>
-    </div>
-</div>

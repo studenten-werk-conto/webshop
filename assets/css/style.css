@@ -10,11 +10,17 @@
 
 /* --- 1 --- */
  .product_card{
-     background-color: antiquewhite;
-    height: --product_card_height;
+    display: inline-block;
+    background-color: antiquewhite;
+    height: var(--product_card_height);
     width: var(--product_card_width); 
  }
  .product_card img{
      background-color: aquamarine;
      height: calc(var(--product_card_height)/2);
+    }
+    .product_card_order_button{
+        height: 30px;
+        width: auto;
+        float: right;
     }
