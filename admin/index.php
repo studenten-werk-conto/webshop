@@ -19,8 +19,9 @@
                 if($liqry->num_rows == '1' && password_verify($password,$dbHashPassword)){
                     $_SESSION['Sadmin_id'] = $adminId;
                     $_SESSION['Sadmin_email'] = stripslashes($email);
+                    
                     echo "Bezig met inloggen... <meta http-equiv=\"refresh\" content=\"1; URL=index_loggedin.php\">";
-                    exit();
+                    // exit();
                 } else {
                     echo "ERROR tijdens inloggen";
                 }
@@ -29,7 +30,7 @@
         }
     }
 ?>
-<form action="index.php" method="post">
+<form action="index_loggedin.php" method="post">
     <input type="email" name="email" id="" placeholder="Email">
     <input type="password" name="password" id="" placeholder="Password">
     <input type="submit" name="submit" value="Login">

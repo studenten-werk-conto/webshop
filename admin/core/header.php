@@ -1,12 +1,23 @@
 <?php
-    include('../core/db_connect.php');
+include('../core/db_connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Webshop</title>
 </head>
+<header>
+    <nav>
+        <a href="#">
+            <div class="header_nav_button">
+                knop1
+            </div>
+        </a>
+    </nav>
+</header>
+
 <body>

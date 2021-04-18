@@ -4,7 +4,7 @@ session_start();
 /**
  * Voor de MAC gebruikers;
  */
-$dbhost = "192.168.178.98:3306";
+$dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "123456";
 $dbname = "webshop";

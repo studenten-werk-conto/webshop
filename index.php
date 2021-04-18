@@ -1,14 +1,13 @@
 <?php
-// include('core/header.php');
+include('./core/header.php');
 ?>
- <link rel="prefetch stylesheet" href="./assets/css/style.css">
  <!-- q and a time with conto
 q: why make a giant css file for the styling of the website? 
 a: well there is a prefetch so it will be loaded once and then stored in chache this will save bandwith server and client side --> 
-
+<link rel="stylesheet" src="../assets/css/style.css"> <!-- todo add prefetch -->
 <main>
 <div class="product_card">
-    <img src="https://i.redd.it/yw18vowkfur61.jpg" alt="product photo">
+    <img src="https://i.redd.it/6e7h50adj9t61.jpg" alt="product photo">
     <div class="product_card_">
         <b>naam</b>
         <br>

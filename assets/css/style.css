@@ -9,6 +9,7 @@
 }
 *{
     margin: 0px;
+    background-color: gray;
 }
 
 /* --- 1 --- */
@@ -30,3 +31,8 @@
         float: right;
         margin-bottom: ;
     }
+.header_nav_button{
+    background-color: aqua;
+    height: 30px;
+    width: 10%;
+}
