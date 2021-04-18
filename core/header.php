@@ -14,11 +14,13 @@
 
  <body>
      <header>
+     <div id="header_logo">
          <img src="https://www.ikea.com/nl/nl/static/ikea-logo.f88b07ceb5a8c356b7a0fdcc9a563d63.svg" alt="logo ">
-         <img>
+     <b>your one stop shop</b>
+     </div>
          <nav>
-             <a class="header_nav_button" href="#">
-                 <ul>test</ul>
+             <a href="#">
+                 <div class="header_nav_button">test</div>
              </a>
          </nav>
      </header>

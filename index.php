@@ -4,7 +4,7 @@ include('./core/header.php');
  <!-- q and a time with conto
 q: why make a giant css file for the styling of the website? 
 a: well there is a prefetch so it will be loaded once and then stored in chache this will save bandwith server and client side --> 
-<link rel="stylesheet" src="../assets/css/style.css"> <!-- todo add prefetch -->
+<link rel="stylesheet" href="./assets/css/style.css"> <!-- FIXME add prefetch -->
 <main>
 <div class="product_card">
     <img src="https://i.redd.it/6e7h50adj9t61.jpg" alt="product photo">
@@ -25,5 +25,5 @@ a: well there is a prefetch so it will be loaded once and then stored in chache 
 </div>
 </main>
 <?php
-// include('core/footer.php');
+include('core/footer.php');
 ?>
