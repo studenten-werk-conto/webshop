@@ -1,0 +1,15 @@
+main {
+    margin-left: auto;
+    margin-right: auto; 
+    min-width: 20%;
+}
+.categorie_card{
+    display: inline-block;
+    background-color: hsl(196, 66%, 39%);
+    height: var(--product_card_height);
+    width: var(--product_card_width);
+    border: black 1px;
+    border-style: dashed;
+    /* margin-left: auto;
+    margin-right: auto;  */
+}

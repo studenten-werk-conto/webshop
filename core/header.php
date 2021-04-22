@@ -19,7 +19,7 @@
      <b>your one stop shop</b>
      </div>
          <nav>
-             <a href="#">
+             <a href="./categories.php">
                  <div class="header_nav_button">test</div>
              </a>
          </nav>
