@@ -49,7 +49,7 @@ header img {
 main {
   margin-right: auto;
   margin-left: auto;
-  width: 50%;
+  /* width: 50%; */
   background-color: gray;
 }
 .product_card {

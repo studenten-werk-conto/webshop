@@ -4,12 +4,21 @@ main {
     min-width: 20%;
 }
 .categorie_card{
-    display: inline-block;
+    /* display: inline-block; */
     background-color: hsl(196, 66%, 39%);
-    height: var(--product_card_height);
-    width: var(--product_card_width);
+    height: 300px;
+    width: 100%;
     border: black 1px;
     border-style: dashed;
-    /* margin-left: auto;
-    margin-right: auto;  */
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.categorie_card_info{
+  position: absolute;
+  background-color: rgb(113, 110, 138);
+  min-height: 10px;
+  min-width: 10%;
+  transform: translateY(-20px);
 }

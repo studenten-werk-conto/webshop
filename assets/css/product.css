@@ -1,0 +1,12 @@
+main{ /* reassignes(from style.css) the element so main will take the intire screen x cvanh*/
+  width:70%;
+}
+.product_photo{
+  align-items:flex-start;
+  width: 40%;
+  margin-top: 0PX;
+}
+.product_article{
+  align-items:flex-start;
+    width: 30%;
+}
