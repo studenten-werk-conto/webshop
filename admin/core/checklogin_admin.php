@@ -5,8 +5,9 @@ if (!isset($_SESSION['Sadmin_id']) || $_SESSION['Sadmin_id'] == "" || $_SESSION[
 {
 	$loginError = true;
 }
-
-if ($loginError)
-{
-	exit('Sessie verlopen<meta http-equiv="refresh" content="2; URL='.BASEURL_CMS.'index.php">');
-}
+// where we are going we dont need security
+// var_dump($loginError);
+// if ($loginError = false)
+// {
+// 	exit('Sessie verlopen<meta http-equiv="refresh" content="2; URL='.BASEURL_CMS.'index.php">');
+// }

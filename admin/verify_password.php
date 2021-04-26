@@ -32,10 +32,10 @@
                     } 
                     $query1->close();
                     
-                    echo "Gelukt, u wordt doorgestuurd... <meta http-equiv=\"refresh\" content=\"2; URL=index.php\">";
+                    echo "succes <meta http-equiv=\"refresh\" content=\"2; URL=index.php\">";
                     exit();
                 } else {
-                    echo "ERROR tijdens verzenden. Komen de wachtwoorden overeen?";
+                    echo "error is everything entered correctly? do the password match?";
                 }
             }
             $liqry->close();

@@ -2,11 +2,14 @@ main{ /* reassignes(from style.css) the element so main will take the intire scr
   width:70%;
 }
 .product_photo{
-  align-items:flex-start;
+  display: inline-block;
   width: 40%;
-  margin-top: 0PX;
+  /* margin-top: 0PX; */
 }
 .product_article{
-  align-items:flex-start;
+    display: inline-block;
     width: 30%;
+}
+.product_article_order{
+  
 }
