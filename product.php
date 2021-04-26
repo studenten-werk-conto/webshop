@@ -7,19 +7,22 @@ include('./core/header.php');
 
     <img class="product_photo" src="https://i.redd.it/soqmyvvu68u61.png" alt="product">
     <article class="product_article">
-    <div class="product_article_order">
-    <img src="./assets/img/order.png" alt="order">
-    <label for="cars">Choose a car:</label>
+        <form action="#" class="product_article_form">
+            <label for="amount">kies een aantal</label>
 
-<select name="cars" id="cars">
-    <?php
-for ($i=0; $i < 10 ; $i++) { 
-    echo('<option value="'.$i.'">'.$i.'</option>');
-};
-    ?>
-    
-</select>
-    </div>
+            <select name="aantal" id="product_article_anmount">
+                <?php // this generates the amount field 1-10
+                for ($i = 0; $i < 11; $i++) {
+                    echo ('<option value="' . $i . '">' . $i . '</option>');
+                };
+                ?>
+                <input type="submit" src="./assets/img/order.png">
+        </form>
+       
+        </select>
+        </div>
+        <br>
+        <br>
         I like my women like I like my coffee.
         Ground up and put in the freezer.
         I am from Kenya, please send help
