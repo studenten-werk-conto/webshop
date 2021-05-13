@@ -36,19 +36,19 @@
 
         $uid = $con->real_escape_string($_GET['uid']);
 
-        $liqry = $con->prepare("SELECT admin_user_id,email FROM admin_user WHERE admin_user_id = ? LIMIT 1;");
+        $liqry = $con->prepare("SELECT admin_user_id,username FROM admin_user WHERE admin_user_id = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
             $liqry->bind_param('i',$uid);
-            $liqry->bind_result($adminId,$email);
+            $liqry->bind_result($adminId,$username);
             if($liqry->execute()){
                 $liqry->store_result();
                 $liqry->fetch();
                 if($liqry->num_rows == '1'){
                     echo '$adminId: ' . $adminId . '<br>';
                     echo '<input type="hidden" name="uid" value="' . $adminId . '" />';
-                      echo '$email: ' . $email . '<br>';
+                      echo '$username: ' . $username . '<br>';
                 }
             }
         }

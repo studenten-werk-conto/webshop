@@ -1,9 +1,12 @@
 <?php
+
+    // TJA LALALALALALLALALALLA
+
     include('../core/header.php');
     include('../core/checklogin_admin.php');
 ?>
 
-<h1>Edit category</h1>
+<h1>Edit categosry</h1>
 
 <?php
     if (isset($_POST['submit']) && $_POST['submit'] != '') {

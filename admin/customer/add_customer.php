@@ -17,17 +17,17 @@
         $zip = $con->real_escape_string($_POST['zip']);
         $city = $con->real_escape_string($_POST['city']);
         $phone = $con->real_escape_string($_POST['phone']);
-        $email = $con->real_escape_string($_POST['email']);
+        $username = $con->real_escape_string($_POST['username']);
         $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $news = $con->real_escape_string($_POST['news']);
 
-        $liqry = $con->prepare("INSERT INTO customer (gender, first_name, middle_name, last_name, street, house_number, house_number_addon, zip_code, city, phone, emailadres, password, newsletter_subscription) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $liqry = $con->prepare("INSERT INTO customer (gender, first_name, middle_name, last_name, street, house_number, house_number_addon, zip_code, city, phone, usernameadres, password, newsletter_subscription) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
-            $liqry->bind_param('sssssssssssss',$gender,$firstname,$midname,$lastname,$street,$housenum,$housenumadd,$zip,$city,$phone,$email,$passwordHash,$news);
+            $liqry->bind_param('sssssssssssss',$gender,$firstname,$midname,$lastname,$street,$housenum,$housenumadd,$zip,$city,$phone,$username,$passwordHash,$news);
             if($liqry->execute()){
-                echo "Customer with email " . $email . " added.";
+                echo "Customer with username " . $username . " added.";
                 header('Location: index.php');
             }
         }
@@ -35,7 +35,7 @@
     }
 ?>
 
-<form action="" method="POST"> TODO UNFUCK THIS AND ADD LABELS
+<form action="" method="POST">
     Gender: <select name="gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -50,7 +50,7 @@
     Zip code:<input type="text" name="zip"><br>
     City:<input type="text" name="city"><br>
     Phone:<input type="text" name="phone"><br>
-    Email: <input type="text" name="email"><br>
+    username: <input type="text" name="username"><br>
     Password: <input type="password" name="password"><br>
     Newsletter subscription:
     <select name="news">

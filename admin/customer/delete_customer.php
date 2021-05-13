@@ -36,19 +36,19 @@
 
         $uid = $con->real_escape_string($_GET['uid']);
 
-        $liqry = $con->prepare("SELECT customer_id,emailadres FROM customer WHERE customer_id = ? LIMIT 1;");
+        $liqry = $con->prepare("SELECT customer_id,usernameadres FROM customer WHERE customer_id = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
             $liqry->bind_param('i',$uid);
-            $liqry->bind_result($customerId,$email);
+            $liqry->bind_result($customerId,$username);
             if($liqry->execute()){
                 $liqry->store_result();
                 $liqry->fetch();
                 if($liqry->num_rows == '1'){
                     echo 'ID: ' . $customerId . '<br>';
                     echo '<input type="hidden" name="uid" value="' . $customerId . '" />';
-                    echo 'Email: ' . $email . '<br>';
+                    echo 'username: ' . $username . '<br>';
                 }
             }
         }

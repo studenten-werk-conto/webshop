@@ -159,7 +159,7 @@ CREATE TABLE `user` (
   `firstName` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `birthDate` date NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -167,7 +167,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `firstName`, `lastname`, `birthDate`, `email`, `password`) VALUES
+INSERT INTO `user` (`id`, `firstName`, `lastname`, `birthDate`, `username`, `password`) VALUES
 (2, 'Docent', 'Docent', '2000-06-22', 'docent@inholland.nl', 'inhollandiskutlmao'),
 (3, 'voornaam', 'achternaam', '2031-03-19', 'todd@kernel.org', 'staatsgeheim');
 

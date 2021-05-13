@@ -1,45 +1,34 @@
 <?php
-    include('core/header.php');
-    include('core/checklogin_admin.php');
+    include('../core/header.php');
+    include('./core/checklogin_admin.php');
+    var_dump($con);
 ?>
-<ul>
-    <li><a href="users/">Gebruikers</a></li>
-    <li><a href="orders/">Bestellingen</a></li>
-    <li><a href="producten">Producten</a></li>
-</ul>
-<h1>Category overview</h1>
+<h1>Welcome user <?php echo $_SESSION['Sadmin_id']; ?></h1>
+- <a href="logout.php">Log-out</a> <br>
 
 <?php
-    $liqry = $con->prepare("SELECT category_id,name,description,active FROM category");
-    if($liqry === false) {
-       echo mysqli_error($con);
-    } else{
-        $liqry->bind_result($id,$name,$desc,$active);
-        if($liqry->execute()){
-            $liqry->store_result();
-            echo '<table border=1>
-                    <tr>
-                        <td>ID</td>
-                        <td>name</td>
-                        <td>Description</td>
-                        <td>Active</td>
-                        <td>edit</td>
-                    </tr>';
-            while ($liqry->fetch() ) { ?>
-                    <tr>
-                    <td><?php echo $id; ?></td>
-                    <td><?php echo $name; ?></td>
-                    <td><?php echo $desc; ?></td>
-                    <td><?php echo $active; ?></td>
-                    <td><a href="./edit_category.php?id=<?php echo $id; ?>">edit</a></td>
-                </tr>
-                <?php 
-            }
-            echo '</table>';
-        }
-        $liqry->close();
-    }
+if ( isset($_GET['logout'])  && $_GET['logout'] == '1') {
+    unset($_SESSION['Sadmin_id']);
+    unset($_SESSION['Sadmin_username']);
+    header("location:index.php");
+}
 ?>
+
+
+<ul>
+    <li>
+        <a href="user/">Admin users</a>
+    </li>
+    <li>
+        <a href="customer/">Customers</a>
+    </li>
+    <li>
+        <a href="category/">Categories</a>
+    </li>
+    <li>
+        <a href="products/">Products</a>
+    </li>
+</ul>
 <?php
-    include('core/footer.php');
+    include('../core/footer.php');
 ?>

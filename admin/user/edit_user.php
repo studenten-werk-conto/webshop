@@ -8,13 +8,13 @@
 <?php
     if (isset($_POST['submit']) && $_POST['submit'] != '') {
         $uid = $con->real_escape_string($_POST['uid']);
-        $email = $con->real_escape_string($_POST['email']);
-        $query1 = $con->prepare("UPDATE admin_user SET email = ? WHERE admin_user_id = ? LIMIT 1;");
+        $username = $con->real_escape_string($_POST['username']);
+        $query1 = $con->prepare("UPDATE admin_user SET username = ? WHERE admin_user_id = ? LIMIT 1;");
         if ($query1 === false) {
             echo mysqli_error($con);
         }
                     
-        $query1->bind_param('si',$email,$uid);
+        $query1->bind_param('si',$username,$uid);
         if ($query1->execute() === false) {
             echo mysqli_error($con);
         } else {
@@ -33,18 +33,18 @@
     if (isset($_GET['uid']) && $_GET['uid'] != '') {
         $uid = $con->real_escape_string($_GET['uid']);
 
-        $liqry = $con->prepare("SELECT admin_user_id,email FROM admin_user WHERE admin_user_id = ? LIMIT 1;");
+        $liqry = $con->prepare("SELECT admin_user_id,username FROM admin_user WHERE admin_user_id = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
             $liqry->bind_param('i',$uid);
-            $liqry->bind_result($adminId,$email);
+            $liqry->bind_result($adminId,$username);
             if($liqry->execute()){
                 $liqry->store_result();
                 $liqry->fetch();
                 if($liqry->num_rows == '1'){
                     echo '$adminId: <input type="text" name="uid" value="' . $adminId . '" readonly><br>';
-                    echo '$email: <input type="text" name="email" value="' . $email . '"><br>';
+                    echo '$username: <input type="text" name="username" value="' . $username . '"><br>';
                 }
             }
         }

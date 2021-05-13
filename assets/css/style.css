@@ -49,8 +49,9 @@ header img {
 main {
   margin-right: auto;
   margin-left: auto;
-  /* width: 50%; */
+  width: 70%;
   background-color: gray;
+  float: left;
 }
 .product_card {
   display: inline-block;
@@ -63,7 +64,7 @@ main {
 .product_card img {
   background-color: aquamarine;
   height: calc(var(--product_card_height) / 2);
-  width: var(--product_card_width);
+  width: 100%;
 }
 .product_card_order_button {
   height: 30px;
@@ -85,14 +86,14 @@ main {
     float: right;
     margin-bottom: 0px;
 }
-/* aside{
+aside{
     display: flex;
     float: right;
     background-color: blue;
     width: 30%;
     height: 300px;
     position: relative;
-} */
+}
 .header_nav_button {
   background-color: aqua;
   height: 30px;

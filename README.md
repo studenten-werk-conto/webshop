@@ -23,20 +23,20 @@ Zorg dat je lokaal dit bestand in een database **webshop** hebt geimporteerd.
  ## Code conventions
 Link notion: https://www.notion.so/Code-afspraken-cb7f9788b9ae46dfa782545ec3aec572
 
-- [ ]  CMS inlog
-- [ ]  CMS module Users
-- [ ]  CMS module Products
-- [ ]  CMS module Categories
-- [ ]  CMS module Customers
-- [ ]  Front-end Homepage met een aantal random producten en category data
-- [ ]  Front-end Product overzicht pagina
-- [ ]  Front-end Product detail pagina
-- [ ]  JOINen van category-data bij producten
-- [ ]  Alle queries met een prepare statement
-- [ ]  Alle queries met parameter-binding of result-binding
-- [ ]  Alle $_POST waardes voorzien van een mysqli real_escape_string
-- [ ]  Geen PHP errors op de pagina's
-- [ ]  Alle functionaliteiten getest
+- [x ]  CMS inlog
+- [ x]  CMS module Users
+- [ x]  CMS module Products
+- [ x]  CMS module Categories
+- [ x]  CMS module Customers
+- [ x]  Front-end Homepage met een aantal random producten en category data
+- [ x]  Front-end Product overzicht pagina
+- [ x]  Front-end Product detail pagina
+- [ x]  JOINen van category-data bij producten
+- [ x]  Alle queries met een prepare statement
+- [ x]  Alle queries met parameter-binding of result-binding
+- [ x]  Alle $_POST waardes voorzien van een mysqli real_escape_string
+- [ x]  Geen PHP errors op de pagina's
+- [ x]  Alle functionaliteiten getest
 
 ---
 
@@ -53,16 +53,16 @@ Extra
 
 ## Database
 
-- [ ]  Zelf een SELECT query kunnen schrijven met een WHERE statement.
-- [ ]  Zelf een UPDATE query kunnen schrijven, waarbij 1 regel kunnen kan wijzigen.
-- [ ]  INSERT
-- [ ]  DELETE
-- [ ]  SELECT JOIN
-- [ ]  Relaties tussen tabellen
-- [ ]  Tabellen aanmaken
-- [ ]  Veldtypes kunnen aangeven
-- [ ]  Tabellen voorzien Primary Keys
-- [ ]  Tabellen; product, product_image, category, customer
+- x[ ]  Zelf een SELECT query kunnen schrijven met een WHERE statement.
+- [x ]  Zelf een UPDATE query kunnen schrijven, waarbij 1 regel kunnen kan wijzigen.
+- [ x]  INSERT
+- [ x  DELETE
+- [ x]  SELECT JOIN
+- [x ]  Relaties tussen tabellen
+- [x ]  Tabellen aanmaken
+- [x ]  Veldtypes kunnen aangeven
+- [x ]  Tabellen voorzien Primary Keys
+- [x ]  Tabellen; product, product_image, category, customer
 
 ---
 

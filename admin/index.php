@@ -1,27 +1,29 @@
 <?php
-    include('core/header.php');
-
+    include('../core/header.php');
     if (isset($_POST['submit']) && $_POST['submit'] != '') {
-        //default user: test@test.nl
-        //default password: test123
-        $email = $con->real_escape_string($_POST['email']);
+        echo('1');
+        $username = $con->real_escape_string($_POST['username']);
+        echo('1');
         $password = $con->real_escape_string($_POST['password']);
-        
-        $liqry = $con->prepare("SELECT admin_user_id,email,password FROM admin_user WHERE email = ? LIMIT 1;");
+        echo('15');
+        $liqry = $con->prepare("SELECT admin_user_id,username,password FROM admin_user WHERE username = '".$username."' LIMIT 1;");
+        echo('14');
         if($liqry === false) {
             trigger_error(mysqli_error($con));
+            echo('13');
         } else{
-            $liqry->bind_param('s',$email);
-            $liqry->bind_result($adminId,$email,$dbHashPassword);
+            echo('1SADADSF2');
+            $liqry->bind_param('s',$username);
+            $liqry->bind_result($adminId,$username,$dbHashPassword);
             if($liqry->execute()){
                 $liqry->store_result();
                 $liqry->fetch();
-                if($liqry->num_rows == '1' && password_verify($password,$dbHashPassword)){
+                echo'ranker';
+                if(password_verify($password, $dbHashPassword)){
                     $_SESSION['Sadmin_id'] = $adminId;
-                    $_SESSION['Sadmin_email'] = stripslashes($email);
-                    
+                    $_SESSION['Sadmin_username'] = stripslashes($username);
                     echo "Bezig met inloggen... <meta http-equiv=\"refresh\" content=\"1; URL=index_loggedin.php\">";
-                    // exit();
+                    exit();
                 } else {
                     echo "ERROR tijdens inloggen";
                 }
@@ -30,12 +32,11 @@
         }
     }
 ?>
-<form action="index_loggedin.php" method="post">
-    <input type="email" name="email" id="" placeholder="Email">
+<form action="index.php" method="post">
+    <input type="username" name="username" id="" placeholder="username">
     <input type="password" name="password" id="" placeholder="Password">
     <input type="submit" name="submit" value="Login">
-    <a href="forgot_password.php">Forgot Password?</a>
 </form>
 <?php
-    include('core/footer.php');
+    include('../core/footer.php');
 ?>

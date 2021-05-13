@@ -1,5 +1,5 @@
  <?php
-    // include('core/db_connect.php');
+    include('db_connect.php');
     ?>
  <!DOCTYPE html>
  <html lang="en">
@@ -20,9 +20,9 @@
      <b>your one stop shop</b>
      </div>
          <nav>
-             <a href="./categories.php">
+             <!-- <a href="./categories.php">
                  <div class="header_nav_button">test</div>
-             </a>
+             </a> -->
              <a href="./product.php">
                  <div class="header_nav_button">product</div>
              </a>

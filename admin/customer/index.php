@@ -7,11 +7,11 @@
 <h1>Customer overview</h1>
 
 <?php
-        $liqry = $con->prepare("SELECT customer_id, gender, CONCAT(first_name, ' ', middle_name, ' ', last_name), CONCAT(street, ' ', house_number, ' ', house_number_addon), city, phone, emailadres, newsletter_subscription FROM customer");
+        $liqry = $con->prepare("SELECT customer_id, gender, CONCAT(first_name, ' ', middle_name, ' ', last_name), CONCAT(street, ' ', house_number, ' ', house_number_addon), city, phone, usernameadres, newsletter_subscription FROM customer");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
-            $liqry->bind_result($custId,$gender,$name,$home,$city,$phone,$email,$sub);
+            $liqry->bind_result($custId,$gender,$name,$home,$city,$phone,$username,$sub);
             if($liqry->execute()){
                 $liqry->store_result();
                 echo '<table border=1>
@@ -22,7 +22,7 @@
                             <td>Home</td>
                             <td>City</td>
                             <td>Phone</td>
-                            <td>Email</td>
+                            <td>username</td>
                             <td>Newsletter</td>
                             <td>edit</td>
                             <td>delete</td>
@@ -35,7 +35,7 @@
                         <td><?php echo $home; ?></td>
                         <td><?php echo $city; ?></td>
                         <td><?php echo $phone; ?></td>
-                        <td><?php echo $email; ?></td>
+                        <td><?php echo $username; ?></td>
                         <td><?php echo $sub; ?></td>
                         <td><a href="edit_customer.php?uid=<?php echo $custId; ?>">edit</a></td>
                         <td><a href="delete_customer.php?uid=<?php echo $custId; ?>">delete</a></td>

@@ -18,14 +18,14 @@
         $zip_code = $con->real_escape_string($_POST['zip_code']);
         $city = $con->real_escape_string($_POST['city']);
         $phone = $con->real_escape_string($_POST['phone']);
-        $emailadres = $con->real_escape_string($_POST['emailadres']);
+        $usernameadres = $con->real_escape_string($_POST['usernameadres']);
         $newsletter_subscription = $con->real_escape_string($_POST['newsletter_subscription']);
-        $query1 = $con->prepare("UPDATE customer SET gender = ?, first_name = ?, middle_name = ?, last_name = ?, street = ?, house_number = ?, house_number_addon = ?, zip_code = ?, city = ?, phone = ?, emailadres = ?, newsletter_subscription = ? WHERE customer_id = ? LIMIT 1;");
+        $query1 = $con->prepare("UPDATE customer SET gender = ?, first_name = ?, middle_name = ?, last_name = ?, street = ?, house_number = ?, house_number_addon = ?, zip_code = ?, city = ?, phone = ?, usernameadres = ?, newsletter_subscription = ? WHERE customer_id = ? LIMIT 1;");
         if ($query1 === false) {
             echo mysqli_error($con);
         }
                     
-        $query1->bind_param('ssssssssssssi',$gender,$first_name,$middle_name,$last_name,$street,$house_number,$house_number_addon,$zip_code,$city,$phone,$emailadres,$newsletter_subscription,$customer_id);
+        $query1->bind_param('ssssssssssssi',$gender,$first_name,$middle_name,$last_name,$street,$house_number,$house_number_addon,$zip_code,$city,$phone,$usernameadres,$newsletter_subscription,$customer_id);
         if ($query1->execute() === false) {
             echo mysqli_error($con);
         } else {
@@ -44,17 +44,17 @@
     if (isset($_GET['uid']) && $_GET['uid'] != '') {
         $uid = $con->real_escape_string($_GET['uid']);
 
-        $liqry = $con->prepare("SELECT customer_id, gender, first_name, middle_name, last_name, street, house_number, house_number_addon, zip_code, city, phone, emailadres, newsletter_subscription FROM customer WHERE customer_id = ? LIMIT 1;");
+        $liqry = $con->prepare("SELECT customer_id, gender, first_name, middle_name, last_name, street, house_number, house_number_addon, zip_code, city, phone, usernameadres, newsletter_subscription FROM customer WHERE customer_id = ? LIMIT 1;");
         if($liqry === false) {
            echo mysqli_error($con);
         } else{
             $liqry->bind_param('i',$uid);
-            $liqry->bind_result($customer_id,$gender,$first_name,$middle_name,$last_name,$street,$house_number,$house_number_addon,$zip_code,$city,$phone,$emailadres,$newsletter_subscription);
+            $liqry->bind_result($customer_id,$gender,$first_name,$middle_name,$last_name,$street,$house_number,$house_number_addon,$zip_code,$city,$phone,$usernameadres,$newsletter_subscription);
             if($liqry->execute()){
                 $liqry->store_result();
                 $liqry->fetch();
                 if($liqry->num_rows == '1'){
-                    $columns = array('customer_id', 'gender', 'first_name', 'middle_name', 'last_name', 'street', 'house_number', 'house_number_addon', 'zip_code', 'city', 'phone', 'emailadres', 'newsletter_subscription');
+                    $columns = array('customer_id', 'gender', 'first_name', 'middle_name', 'last_name', 'street', 'house_number', 'house_number_addon', 'zip_code', 'city', 'phone', 'usernameadres', 'newsletter_subscription');
                     foreach ($columns as $key) {
                         $typeInput = "input";
                         $type = "text";
@@ -71,8 +71,8 @@
                         if ($key == 'phone') {
                             $type = "tel";
                         }
-                        if ($key == 'emailadres ') {
-                            $type = "email";
+                        if ($key == 'usernameadres ') {
+                            $type = "username";
                         }
                         echo '<b>' . $key .'</b> :<'.$typeInput.' type="'.$type.'" name="'.$key.'" value="' . $$key . '" '.$read.'>';
                         if ($typeInput == "textarea") {
