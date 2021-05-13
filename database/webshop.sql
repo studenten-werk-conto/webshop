@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 15, 2021 at 08:54 AM
+-- Generation Time: May 13, 2021 at 07:31 PM
 -- Server version: 8.0.23
 -- PHP Version: 7.4.16
 
@@ -24,21 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `admin_user`
 --
 
-CREATE TABLE `admin` (
-  `id` int NOT NULL,
+CREATE TABLE `admin_user` (
+  `admin_user_id` int NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `admin_user`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin@admin.co.uk', '123456');
+INSERT INTO `admin_user` (`admin_user_id`, `username`, `password`) VALUES
+(1, 'admin@admin.co.uk', '123456'),
+(4, 'e@e.com', '$2y$10$WO4ZdMKTVVrtRKm4oNY/cOk5iRLkeh6Hzoa1vI64MpAzDtJAqnvfW');
 
 -- --------------------------------------------------------
 
@@ -59,7 +60,7 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`category_id`, `name`, `description`, `active`) VALUES
 (1, 'tafellamp', 'Tafellampen zijn binnenlampen voor op tafel.', 1),
-(2, 'buitenlamp', 'Buitenlampen zijn lampen voor buiten.', 1),
+(2, 'buitenlamp', 'Buitenlampen zijn lampen voor4re buiten.', 1),
 (3, 'designlamp', 'Designlampen zijn mooie lampen.', 1),
 (4, 'bureaulamp', 'Bureaulampen zijn lampen voor op een bureau.', 1);
 
@@ -159,7 +160,7 @@ CREATE TABLE `user` (
   `firstName` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `birthDate` date NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -167,7 +168,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `firstName`, `lastname`, `birthDate`, `username`, `password`) VALUES
+INSERT INTO `user` (`id`, `firstName`, `lastname`, `birthDate`, `email`, `password`) VALUES
 (2, 'Docent', 'Docent', '2000-06-22', 'docent@inholland.nl', 'inhollandiskutlmao'),
 (3, 'voornaam', 'achternaam', '2031-03-19', 'todd@kernel.org', 'staatsgeheim');
 
@@ -176,10 +177,10 @@ INSERT INTO `user` (`id`, `firstName`, `lastname`, `birthDate`, `username`, `pas
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `admin_user`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`),
+ALTER TABLE `admin_user`
+  ADD PRIMARY KEY (`admin_user_id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
@@ -217,10 +218,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `admin_user`
 --
-ALTER TABLE `admin`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `admin_user`
+  MODIFY `admin_user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `category`

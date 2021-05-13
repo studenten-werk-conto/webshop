@@ -20,11 +20,11 @@
      <b>your one stop shop</b>
      </div>
          <nav>
-             <!-- <a href="./categories.php">
-                 <div class="header_nav_button">test</div>
-             </a> -->
-             <a href="./product.php">
-                 <div class="header_nav_button">product</div>
+             <a href="./index.php">
+                 <div class="header_nav_button">home</div>
+             </a>
+             <a href="./admin/index.php">
+                 <div class="header_nav_button">admin</div>
              </a>
          </nav>
      </header>

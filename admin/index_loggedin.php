@@ -18,10 +18,7 @@ if ( isset($_GET['logout'])  && $_GET['logout'] == '1') {
 <ul>
     <li>
         <a href="user/">Admin users</a>
-    </li>
-    <li>
-        <a href="customer/">Customers</a>
-    </li>
+</li>
     <li>
         <a href="category/">Categories</a>
     </li>

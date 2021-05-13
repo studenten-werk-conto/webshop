@@ -1,6 +1,6 @@
 <?php
     include('../../core/db_connect.php');
-    var_dump($_SERVER['DOCUMENT_ROOT']);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
