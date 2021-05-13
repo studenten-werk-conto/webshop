@@ -7,9 +7,8 @@ include('./core/header.php');
 
     <img class="product_photo" src="https://i.redd.it/soqmyvvu68u61.png" alt="product">
     <article class="product_article">
-    <div class="product_article_order">
-    <img src="./assets/img/order.png" alt="order">
-    <label for="cars">Choose a car:</label>
+        <form action="#" class="product_article_form">
+            <label for="amount">kies een aantal</label>
 
 <select name="cars" id="cars">
     <?php
